@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Programování</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="codemirror/lib/codemirror.js"></script>
+<link rel="stylesheet" href="codemirror/lib/codemirror.css">
+<script src="clike.js"></script>
+<link rel="stylesheet" href="codemirror/theme/duotone-light.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "Raleway", sans-serif
+    }
+
+    .w3-third img {
+        margin-bottom: -6px;
+        opacity: 0.8;
+        cursor: pointer
+    }
+
+    .w3-third img:hover {
+        opacity: 1
+    }
+</style>
+
+<!-- scripts -->
+<script>
+    MathJax = {
+        tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+    };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<!-- end scripts -->
+
+
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center"
+        style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+        <h3 class="w3-padding-64 w3-center"><b>Seminář<br>programování 1</b></h3>
+        <a href="variables.html" onclick="w3_close()" class="w3-bar-item w3-button">Proměnné</a>
+        <a href="conditions.html" onclick="w3_close()" class="w3-bar-item w3-button">Podmínky</a>
+        <a href="loops.html" onclick="w3_close()" class="w3-bar-item w3-button">Cykly</a>
+        <!-- <i class="fa fa-close"></i> -->
+        <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-padding-16 w3-button w3-display-topright"></i>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
+        <span class="w3-left w3-padding">Seminář programování 1</span>
+        <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+        title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:300px">
+
+        <!-- Push down content on small screens -->
+        <div class="w3-hide-large" style="margin-top:83px"></div>
+
+
+        <!-- Modal for full size images on click-->
+
+
+        <!-- About section -->
+
+
+        <!-- Contact section -->
+        <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
+            <div class="w3-content" style="max-width:1000px">
+                <h2><b>Cykly</b></h2>
+                <h3>Motivace</h3>
+                <ul>
+                    <li>úkol: vypište prvních 5 přirozených čísel</li>
+                </ul>
+                <textarea class="code">
+Console.WriteLine(1);
+Console.WriteLine(2);
+Console.WriteLine(3);
+Console.WriteLine(4);
+Console.WriteLine(5);</textarea>
+                <ul>
+                    <li>úkol: vypište prvních 1 000 000 přirozených čísel (problém?)</li>
+                </ul>
+                <h3>Cyklus while</h3>
+                <ul>
+                    <li>opakování bloků příkazů</li>
+                    <li>dokud je splněna uvedená podmínka</li>
+                    <li>podmínku píšeme na začátek cyklu</li>
+                    <li>podmínka se testuje na začátku každého průchodu cyklem</li>
+                    <li>zápis:</li>
+                </ul>
+                <textarea class="code">
+while(podmínka)
+{
+    příkazy
+    ...
+}</textarea>
+
+                <h3>Příklady užití cyklu while</h3>
+
+                <textarea class="code">
+int n = 50;
+int i = 0;
+
+while(i<=n)
+{
+    Console.WriteLine(i);
+    i++;
+}
+
+Console.WriteLine("Vyskočil jsem z cyklu a pokračuji dále!")</textarea>
+                <p>V tomto příkladu se vypíše do konzole na samostatných řádcích čísla 0 až 50. Podmínka <b>i <= n</b>
+                            se
+                            testuje ještě předtím, než se vůbec začne vyhodnocovat tělo cyklu. Pokud je splněna, vypíše
+                            se
+                            hodnota <b>i</b> do konzole a následně se hodnota proměnné <b>i</b> zvedne o 1. Přejde se
+                            opět do
+                            podmínky,
+                            která se otestuje. Pokud je podmínka pravdivá, opět se přejde do těla cyklu. Toto se opakuje
+                            tak
+                            dlouho, dokud je splněna podmínka. Jakmile tato podmínka přestane platit, pokračuje se dále
+                            ve
+                            vyhodnocování programu od 10. řádku.</p>
+                <textarea class="code">
+int n = 0;
+int i = 50;
+
+while(i>=n)
+{
+    Console.WriteLine(i);
+    i--;
+}
+
+Console.WriteLine("Vyskočil jsem z cyklu a pokračuji dále!")</textarea>
+                <p>Zde se do konzole vypíší čísla od 50 až po 0. Jakmile je hodnota proměnné <b>i</b> -1, podmínka není
+                    splněna a pokračuje se řádkem 10.</p>
+                <h3>Cyklus for</h3>
+                <ul>
+                    <li>složitějsí konstrukce cyklu</li>
+                    <li>inicializace řídící proměnné (typicky proměnná i)</li>
+                    <li>test podmínky na začátku cyklu</li>
+                    <li>změna hodnoty řídící proměnné mezí průchody (i++, i--)</li>
+                    <li>zápis:</li>
+                </ul>
+                <textarea class="code">
+for (inicializace; podmínka; iterace)
+{
+    příkazy
+}</textarea>
+                <h3>Příklady cyklu for</h3>
+                <textarea class="code">
+for (int i = 0; i<=50; i++)
+{
+    Console.WriteLine(i);
+}
+
+Console.WriteLine("Vyskočil jsem z cyklu a pokračuji dále!")</textarea>
+                <p>Výsledkem toho programu bude vypsání čísel od 0 do 50. Všimněte si, že program řešený pomocí cyklu
+                    for je kratší něž v analogickém příkladu s použítím cyklu while.</p>
+                <textarea class="code">
+int konec = 50;
+int krok = 5;
+
+for(int i = 0; i <= konec; i += krok )
+{
+    Console.WriteLine(i);
+}
+
+Console.WriteLine("Vyskočil jsem z cyklu a pokračuji dále!")</textarea>
+                <p>V tomto příkladu si můžete všimnou, že není nutné hodnotu řídící proměnné zvyšovat/snižovat pouze o
+                    jedna (v tomto případě zvyšujeme hodnotu řídící proměnné o krok, tedy o 5).</p>
+                <h3>Cyklus do-while</h3>
+                <ul>
+                    <li>testuje podmínku až po prvním průchodu (rozdíl oproti předchozím cyklům)</li>
+                    <li>tzn. příkazy se v těle cyklu vždy alespoň jednou provedou</li>
+                    <li>zápis:</li>
+                </ul>
+                <textarea class="code">
+do
+{
+    příkazy
+    ...
+} while(podmínka);</textarea>
+                <h3>Přerušení cyklu</h3>
+                <ul>
+                    <li>v praxi jsou cykly daleko složitější</li>
+                    <li>často je potřeba z cyklu vyskočit dřív než se dojde k opětovné kontrole podmínky (jinde
+                        než na
+                        začátku/konci)</li>
+                    <li>příkazy pro přerušení - break a continue</li>
+                    <li><b>break</b> = okamžité vyskočení z cyklu</li>
+                    <li><b>continue</b>= přerušení aktuálního průchodu a přechodu k dalšímu</li>
+                </ul>
+                <h3>Příklady přerušení cyklu</h3>
+                <textarea class="code">
+int pocet = 1000;
+int cislo = 1;
+
+while(cislo <= 1000)
+{
+    int druhaMocnina = cislo * cislo;
+    Console.WriteLine(druhaMocnina);
+
+    string zastavit = Console.ReadLine();
+    if (zastavit == "ano")
+    {
+        break;
+    }
+    cislo++;
+}
+
+Console.WriteLine("Vyskočil jsem z cyklu a pokračuji dále!")</textarea>
+                <p>Všimněte si, že na 9. řádku od uživatele načítam textový řetěz, který na následujícím řádku
+                    porovnávám se slovem "ano". Pokud podmínka na 10. platí, přejdu na 12. řádek. Zde se vyhodnotí
+                    příkaz break
+                    a tímto se vyskočí z cyklu. Jde tedy o předčasné přerušení cyklu.</p>
+                <textarea class="code">
+int cislo = Int32.Parse(Console.ReadLine());   
+
+while(true)
+{
+    int druhaMocnina = cislo * cislo;
+    Console.WriteLine(druhaMocnina);
+
+    string pokracovat = Console.ReadLine();
+    if (pokracovat == "ano")
+    {
+        cislo = Int32.Parse(Console.ReadLine());
+        continue;
+    }
+    else
+    {
+        break;
+    }
+    Console.WriteLine("Sem se nikdy nedostanu :( ");
+}
+
+Console.WriteLine("Vyskočil jsem z cyklu a pokračuji dále!")</textarea>
+                <p>Zde opět na 8. řádku načítam od uživatele textový řetezec, pokud je tento řetězec shodný se slovem
+                    "ano", načtu dále od uživatele číslo. Po načtení čísla se vykoná příkaz continue, který ignoruje
+                    zbytek příkazu v těle cyklu a začne nový běh (pokračuje se od 3. řádku). Všimněte si, že ikdyž na
+                    18. příkaz pro vypsaní textu "Sem se nikdy nedostanu :( " do konzole, tento příkaz se nikdy
+                    nevykoná. </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- End page content -->
+
+</body>
+<script src="script.js"></script>
+<script src="graph.js"></script>
+
+</html>

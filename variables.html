@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Programování</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="codemirror/lib/codemirror.js"></script>
+<link rel="stylesheet" href="codemirror/lib/codemirror.css">
+<script src="clike.js"></script>
+<link rel="stylesheet" href="codemirror/theme/duotone-light.css">
+<link rel="stylesheet" href="style.css">
+<style>
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Raleway", sans-serif
+  }
+
+  .w3-third img {
+    margin-bottom: -6px;
+    opacity: 0.8;
+    cursor: pointer
+  }
+
+  .w3-third img:hover {
+    opacity: 1
+  }
+</style>
+
+<!-- scripts -->
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<!-- end scripts -->
+
+
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center"
+    style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+    <h3 class="w3-padding-64 w3-center"><b>Seminář<br>programování 1</b></h3>
+    <a href="variables.html" onclick="w3_close()" class="w3-bar-item w3-button">Proměnné</a>
+    <a href="conditions.html" onclick="w3_close()" class="w3-bar-item w3-button">Podmínky</a>
+    <a href="loops.html" onclick="w3_close()" class="w3-bar-item w3-button">Cykly</a>
+    <!-- <i class="fa fa-close"></i> -->
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-padding-16 w3-button w3-display-topright"></i>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
+    <span class="w3-left w3-padding">Seminář programování 1</span>
+    <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+    title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main" style="margin-left:300px">
+
+    <!-- Push down content on small screens -->
+    <div class="w3-hide-large" style="margin-top:83px"></div>
+
+
+    <!-- Modal for full size images on click-->
+
+
+    <!-- About section -->
+
+
+    <!-- Contact section -->
+    <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
+      <div class="w3-content" style="max-width:1000px">
+        <h2><b>Proměnná</b></h2>
+        <ul>
+          <li>pojmenované misto v paměti</li>
+          <li>v proměnné lze uchovávat jednu hodnotu (tuto hodnotu však můžeme kdykoliv změnit)</li>
+          <li>při vytváření proměnné musíme jasně specifikovat její datový typ (text, číslo, datová struktura apod..)
+          </li>
+          <li>obecný zápis vytvoření proměnné</li>
+        </ul>
+        <textarea class="code">
+typ identifikátor;
+typ indetifikátor = hodnota; </textarea>
+        <p>V přístím textu budeme prvnímu řádku říkat tzv. deklarace proměnné. Druhému řádku deklarace s inicializací.
+        </p>
+        <ul>
+          <li>příklady vytvoření proměnné</li>
+        </ul>
+        <textarea class="code">
+double stranaCtverce;
+int vek = 25;
+string jmeno = "David"; </textarea>
+        <h3>Indetifikátor proměnné</h3>
+        <ul>
+          <li>identifikátor = název proměnné</li>
+          <li>musí být jedinečný</li>
+          <li><b>může</b> obsahovat písmena, číslice a podtržitko</li>
+          <li><b>MUSÍ</b> začínat písmenem nebo podtržítkem</li>
+          <li>vymýslějte identifikátory smysluplně!!</li>
+        </ul>
+        <h3>Datové typy</h3>
+        <table class="w3-table w3-border w3-bordered ">
+          <tr>
+            <th>Typ</th>
+            <th>Popis</th>
+            <th>Velikost</th>
+            <th>Rozsah</th>
+            <th>Příklad</th>
+          </tr>
+          <tr>
+            <td>int</td>
+            <td>Celá čísla</td>
+            <td>32 bitů</td>
+            <td>$-2^{31}$ až $2^{31}-1$</td>
+            <td>int cislo = 55;</td>
+          </tr>
+          <tr>
+            <td>long</td>
+            <td>Celá čísla</td>
+            <td>64 bitů</td>
+            <td>$-2^{63}$ až $2^{63}-1$</td>
+            <td>long vetsiCislo = 55L;</td>
+          </tr>
+          <tr>
+            <td>float</td>
+            <td>Desetinná čísla</td>
+            <td>32 bitů</td>
+            <td>$\pm 1,5 \cdot 10^{-45}$ až $\pm 3,4 \cdot 10^{38}$</td>
+            <td>float desetinne = 3.3F;</td>
+          </tr>
+          <tr>
+            <td>double</td>
+            <td>Desetinná čísla</td>
+            <td>64 bitů</td>
+            <td>$\pm 5,0 \cdot 10^{-324}$ až $\pm 1,7 \cdot 10^{308}$</td>
+            <td>double vetsiDesetinne = 3.3;</td>
+          </tr>
+          <tr>
+            <td>decimal</td>
+            <td>Peněžní hodnoty</td>
+            <td>128 bitů</td>
+            <td>28 významných číslic</td>
+            <td> decimal penize = 5.5M;</td>
+          </tr>
+          <tr>
+            <td>string</td>
+            <td>Textový řetězec</td>
+            <td>16 bitů/znak</td>
+            <td></td>
+            <td>string jmeno = "David";</td>
+          </tr>
+          <tr>
+            <td>char</td>
+            <td>Znak</td>
+            <td>16 bitů</td>
+            <td>$0$ až $2^{16}-1$</td>
+            <td>char znak = 'D';</td>
+          </tr>
+          <tr>
+            <td>bool</td>
+            <td>Logická hodnota</td>
+            <td>8 bitů</td>
+            <td>true nebo false</td>
+            <td>bool pravda = true;</td>
+          </tr>
+
+        </table>
+        <h3>Operátory</h3>
+        <h3>Priorita operátorů</h3>
+        <h3>Aritmetické operátory</h3>
+        <h3>Zvláštní číselné hodnoty</h3>
+        <h3>Výstup do konzole</h3>
+        <p>Výpis do konzole a posunutí na nová řádek</p>
+        <textarea class="code">
+  Console.WriteLine("Jakýkoli text...");
+  Console.WriteLine(jakakoliPromenna);
+  Console.WriteLine(2+cislo);</textarea>
+        <p>Výpis do konzole bez skoku na další řádek</p>
+        <textarea class="code">
+  Console.Write("Jakýkoli text...");
+  Console.Write(jakakoliPromenna);
+  Console.Write(2+cislo);</textarea>
+        <h3>Čtení dat přes konzoli</h3>
+        <p>Přes konzoli <b>vždy načítáme textový řetězec</b>.</p>
+        <textarea class="code">
+  string nactenyText;
+  nactenyText = Console.Readline();</textarea>
+        <p>Pokud chceme načíst jiný datový typ než textový řetězec, musíme proměnou přetypovat.</p>
+        <textarea class="code">
+  int cislo;
+  string nactenyText;
+  nactenyText = Console.ReadLine();
+  cislo = Int32.Parse(nactenyText);</textarea>
+        <p>Tento zápis zle zkrátit následovně:</p>
+        <textarea class="code">
+  int cislo = Int32.Parse(Console.ReadLine());</textarea>
+
+        <div class="w3-panel w3-border-bottom w3-border-top">
+          <h3>Úkol č.1</h3>
+          <p>Napište v jazyce C# program, který od uživatele načte výšku a poloměr válce a poté vypočte povrch a objem.
+            Získané hodnoty vypište do konzole (hodnotu čísla pí dostanete pomocí příkazu Math.PI).</p>
+        </div>
+
+        <div class="w3-panel w3-border-bottom">
+          <h3>Úkol č.2</h3>
+          <p>Napište v jazyce C# program,který od uživatele načte finanční hodnotu v českých korunách a poté ji převede
+            na odpovídající finanční hodnotu v eurech, amerických dolarech, japonský jen, britská libra. Údaje o kurzech
+            naleznete <a href="https://www.kurzy.cz/kurzy-men/prevodnik-men/" target="_blank"><b>zde</b></a>.</p>
+        </div>
+
+        <div class="w3-panel w3-border-bottom">
+          <h3>Úkol č.3</h3>
+          <p>Napište v jazyce C# program, který si bude pamatovat název a cenu jídla (cena jídla bude bez DPH). V
+            programu si uložte hodnotu aktuálního DPH. Program bude následně počítat cenu jídla včetně DPH (zahrňte i
+            spropitné). Do konzole vypište název jidla a cenu.</p>
+          <div class="w3-panel w3-white">
+            <h4><b>Vstup:</b></h4>
+            <p>Zadejte jídlo: Kuřecí s ryží.</p>
+            <p>Cena jídla bez DPH: 119.</p>
+            <h4><b>Výstup:</b></h4>
+            <p>Za jídlo Kuřecí s rýží zaplatíme celkem 157 Kč.</p>
+          </div>
+        </div>
+
+        <div class="w3-panel w3-border-bottom">
+          <h3>Úkol č.4</h3>
+          <p>Napište v jazyce C# program, který vypočítá dobu stahování dat. Objem přenášených dat zadá uživatel (v MB).
+            Následně uživatel zadá rychlosti stahovaní dat (v Mbit/s).</p>
+          <div class="w3-panel w3-white">
+            <h4><b>Vstup:</b></h4>
+            <p>Zadejte objem dat v MB: 2048</p>
+            <p>Zadejte rychlost stahování v Mbit/s: 10</p>
+            <h4><b>Výstup:</b></h4>
+            <p>Doba stahohání: 1 638 s.</p>
+          </div>
+          <div class="w3-panel w3-green w3-border-bottom">
+            <h3>Bonus</h3>
+            <p>Převeďte potřebný čas na formát: h min s (například 0h 27min 18s).</p>
+          </div>
+        </div>
+        <div class="w3-panel w3-border-bottom">
+          <h3>Úkol č. 5</h3>
+          <p>Napište v jazyce C# program, který od uživatele načte dvě čísla a poté provede výpočet operací +, -, *, /.
+            Všechny výsledky vypište do konzole. </p>
+          <div class="w3-panel w3-white">
+            <h4><b>Vstup:</b></h4>
+            <p>Zadejte první číslo: 20</p>
+            <p>Zadejte druhé čislo: 5</p>
+            <h4><b>Výstup:</b></h4>
+            <p>Soucět čísel je: 25.</p>
+            <p>Rozdíl čísel je: 15.</p>
+            <p>Součin čísel je: 100.</p>
+            <p>Podíl čísel je: 4.</p>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <!-- End page content -->
+
+</body>
+<script src="script.js"></script>
+<script src="graph.js"></script>
+
+</html>

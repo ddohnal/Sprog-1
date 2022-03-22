@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Programování</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="codemirror/lib/codemirror.js"></script>
+<link rel="stylesheet" href="codemirror/lib/codemirror.css">
+<script src="clike.js"></script>
+<link rel="stylesheet" href="codemirror/theme/duotone-light.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "Raleway", sans-serif
+    }
+
+    .w3-third img {
+        margin-bottom: -6px;
+        opacity: 0.8;
+        cursor: pointer
+    }
+
+    .w3-third img:hover {
+        opacity: 1
+    }
+</style>
+
+<!-- scripts -->
+<script>
+    MathJax = {
+        tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+    };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<!-- end scripts -->
+
+
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center"
+        style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+        <h3 class="w3-padding-64 w3-center"><b>Seminář<br>programování 1</b></h3>
+        <a href="variables.html" onclick="w3_close()" class="w3-bar-item w3-button">Proměnné</a>
+        <a href="conditions.html" onclick="w3_close()" class="w3-bar-item w3-button">Podmínky</a>
+        <a href="loops.html" onclick="w3_close()" class="w3-bar-item w3-button">Cykly</a>
+        <!-- <i class="fa fa-close"></i> -->
+        <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-padding-16 w3-button w3-display-topright"></i>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
+        <span class="w3-left w3-padding">Seminář programování 1</span>
+        <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+        title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:300px">
+
+        <!-- Push down content on small screens -->
+        <div class="w3-hide-large" style="margin-top:83px"></div>
+
+
+        <!-- Modal for full size images on click-->
+
+
+        <!-- About section -->
+
+
+        <!-- Contact section -->
+        <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
+            <div class="w3-content" style="max-width:1000px">
+                <h2><b>Podmínky</b></h2>
+                <h3>Konstrukce if</h3>
+                <ul>
+                    <li>příkazy se provádějí pouze při splnění určité podmínky</li>
+                    <li>podmínkou je cokoliv, co se vyhodnotí na True/False</li>
+                    <li>možnost přidat příkazy prováděné při nesplnění podmínky (else větev)</li>
+                    <li>podmínky lze do sebe libovolně vnořovat (opatrně!)</li>
+                    <li>zápis:</li>
+                </ul>
+                <textarea class="code">
+if (podmínka)
+{
+    příkazy
+}
+else
+{
+    příkazy
+} </textarea>
+                <h3>Příklady konstrukce if </h3>
+                <textarea class="code">
+int x = -10
+if (x < 0)
+{
+    Console.WriteLine("Hodnota x je záporné číslo");
+}
+else
+{
+    Console.WriteLine("Hodnota x je nezáporné číslo");
+}</textarea>
+
+                <h3>Konstrukce switch</h3>
+                <ul>
+                    <li>větvení podle celočíselného výrazu nebo řetězce</li>
+                    <li>výraz se porovná s hodnotou a pokud se rovnají, provede příkazy v dané větvi</li>
+                    <li>default větev pro možnost, že se ani jedna hodnota nerovná výrazu</li>
+                    <li>switch a if jdou do sebe libovolně vnořovat</li>
+                    <li>zápis:</li>
+                </ul>
+                <textarea class="code">
+switch(výraz)
+{
+    case hodnota1:
+        příkazy 1
+        break;
+        
+    case hodnota2:
+        příkazy 2
+        break;
+    ...
+    default:
+        příkazy
+        break;
+}</textarea>
+                <h3>Příklady konstrukce switch</h3>
+                <p>V tomto příkladě se výraz (číselná hodnota) porovnává s jednotlívymi číselnými údaji v case větvích.
+                    Pokud je nalezena shoda (cislo = 2), pak se provedou příkazy v této větvi a pomocí příkazu break se
+                    ze switche vyskočí.</p>
+                <textarea class="code">
+int cislo = 2;
+switch(cislo)
+{
+    case 1:
+        text = "Jedna";
+        break;
+    case 2:
+        text = "Dva";
+        break;
+    default:
+        text = "Nevím";
+        break;
+}</textarea>
+                <p>Podobně jako v předchozím příkladu se zde porovná výraz (tentokrát textový řetězec) v jednotlivých
+                    case větvích. Pokud je nalezena shoda (text = "Jedna"), pak sou provedeny příkazy v této větvi a
+                    pomocí příkazu break se opět vyskočí ze switche a pokračuje se v programu dále.</p>
+                <textarea class="code">
+string text = "Jedna";
+switch(text)
+{
+    case "Jedna":
+        cislo = 1;
+        break;
+    case "Dva":
+        cislo = 2;
+        break;
+    default:
+        cislo = 0;
+        break;
+}</textarea>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- End page content -->
+
+</body>
+<script src="script.js"></script>
+<script src="graph.js"></script>
+
+</html>
