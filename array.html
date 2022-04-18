@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Programování</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="codemirror/lib/codemirror.js"></script>
+<link rel="stylesheet" href="codemirror/lib/codemirror.css">
+<script src="clike.js"></script>
+<link rel="stylesheet" href="codemirror/theme/duotone-light.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "Raleway", sans-serif
+    }
+
+    .w3-third img {
+        margin-bottom: -6px;
+        opacity: 0.8;
+        cursor: pointer
+    }
+
+    .w3-third img:hover {
+        opacity: 1
+    }
+</style>
+
+<!-- scripts -->
+<script>
+    MathJax = {
+        tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+    };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<!-- end scripts -->
+
+
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center"
+        style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+        <h3 class="w3-padding-64 w3-center"><b>Seminář<br>programování 1</b></h3>
+        <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button">Proměnné</a>
+        <a href="conditions.html" onclick="w3_close()" class="w3-bar-item w3-button">Podmínky</a>
+        <a href="loops.html" onclick="w3_close()" class="w3-bar-item w3-button">Cykly</a>
+        <a href="array.html" onclick="w3_close()" class="w3-bar-item w3-button">Pole</a>
+        <!-- <i class="fa fa-close"></i> -->
+        <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-padding-16 w3-button w3-display-topright"></i>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
+        <span class="w3-left w3-padding">Seminář programování 1</span>
+        <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+        title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:300px">
+
+        <!-- Push down content on small screens -->
+        <div class="w3-hide-large" style="margin-top:83px"></div>
+
+
+        <!-- Modal for full size images on click-->
+
+
+        <!-- About section -->
+
+
+        <!-- Contact section -->
+        <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
+            <div class="w3-content" style="max-width:1000px">
+                <h2><b>Pole</b></h2>
+                <ul>
+                    <li>proměnná, do které se vejde více hodnot (dat)</li>
+                    <li>tato data pak můžeme pohodlně zpracovat (třeba cyklem)</li>
+                    <li>pole = datová struktura; kolekce</li>
+                    <ul>
+                        <li>prvky uspořádány za sebou (lineární)</li>
+                        <li>prvky jsou stejného datového typu (homogenní)</li>
+                        <li>počet prvků v poli nelze (snadno) dodatečně měnit (statická)</li>
+                    </ul>
+                </ul>
+                <h3>Vytvoření pole </h3>
+                <h4>Deklarace pole</h4>
+                <ul>
+                    <li>pole je proměnná – před použitím je potřeba ji vytvořit</li>
+                    <textarea class="code">
+//obecně                      
+typ[] identifikátor;
+//příklad
+int[] cisla;</textarea>
+                    <li>Deklarované pole ještě nemá přidělenou paměť pro prvky</li>
+                    <li>přidělení paměti</li>
+                    <textarea class="code">
+//obecně                     
+typ[] identifikátor = new typ[velikost];
+//příklad
+cisla = new int[10];</textarea>
+                    <li>přidělení paměti s inicializací</li>
+                    <textarea class="code">
+//obecně  
+identifikátor = new typ[velikost]{inicializační hodnoty};
+//příklad
+cisla = new int[5] { 1, 2, 3, 4, 5 };</textarea>
+                    <li>deklarace i předělení paměti v jednom</li>
+                    <textarea class="code">
+//obecně  
+typ[] identifikátor = new typ[velikost]{inicializační hodnoty};
+//příklad
+int[] cisla = new int[5] { 1, 2, 3, 4, 5 };</textarea>
+                    <li>inicializační hodnoty oddělujeme čárkou</li>
+                    <li>velikost a počet inicializačních hodnot musí odpovídat</li>
+                    <li>velikost můžeme vynechat (překladač si ji dopočítá)</li>
+                    <textarea class="code">
+//obecně  
+typ[] identifikátor = new typ[]{inicializační hodnoty};
+//příklad
+int[] cisla = new int[] { 1, 2, 3, 4, 5 };</textarea>
+                    <li>zkráceně i takto</li>
+                    <textarea class="code">
+//obecně  
+typ[] identifikátor = {inicializační hodnoty};
+//příklad
+int[] cisla = { 1, 2, 3, 4, 5 };</textarea>
+                </ul>
+                <h3>Příklady polí jiných datových typů</h3>
+                <textarea class="code">
+double[] data = { 1.1, 2, 3.3, 5.6 };
+string[] jmena = { "Pepa", "Vojta", "Anezka" };
+bool[] prvocisla = { false, false, true, true, false, true };</textarea>
+                <h3>Práce s poli</h3>
+                <ul>
+                    <li>k prvkům přistupujeme pomocí operátoru indexu [ ]</li>
+                    <li>prvky mají indexy od 0 do velikosti pole – 1</li>
+                    <li>příklad:</li>
+                </ul>
+                <textarea class="code">
+int[] cisla = new int[10];
+for (int i = 0; i < 10; i++)
+{
+    cisla[i] = i + 1;
+}
+for (int i = 0; i < 10; i++)
+{
+    Console.Write("{0}, ", cisla[i]);
+}</textarea>
+                <h3>Velikost pole</h3>
+                <ul>
+                    <li>velikost pole lze kdykoli zjistit pomocí jeho vlastnosti Length</li>
+                    <li>příklad:</li>
+                </ul>
+                <textarea class="code">
+int[] cisla = new int[10];
+for (int i = 0; i < cisla.Length ; i++)
+{
+    cisla[i] = i + 1;
+}
+for (int i = 0; i < cisla.Length; i++)
+{
+    Console.Write("{0}, ", cisla[i]);
+}</textarea>
+                <h3>Nový cyklus foreach</h3>
+                <ul>
+                    <li>slouží pro procházení libovolné kolekce (např. pole)</li>
+                    <li>Pouze pokud chceme:</li>
+                    <ul>
+                        <li>zpracovat všechny prvky</li>
+                        <li>od začátku do konce</li>
+                        <li>nepotřebujeme informaci o indexu</li>
+                        <li>nechceme prvky pole měnit</li>
+                    </ul>
+                    <li>obecně:</li>
+                </ul>
+                <textarea class="code">
+foreach (typPrvku idProPrvek in idPole)
+{ 
+    příkazy ...
+}</textarea>
+
+                <ul>
+                    <li>příklad:</li>
+                </ul>
+                <textarea class="code">
+foreach (int cislo in cisla)
+{
+    Console.Write("{0}, ", cislo);
+}</textarea>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- End page content -->
+
+</body>
+<script src="script.js"></script>
+<script src="graph.js"></script>
+
+</html>
