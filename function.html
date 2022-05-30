@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Programování</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="codemirror/lib/codemirror.js"></script>
+<link rel="stylesheet" href="codemirror/lib/codemirror.css">
+<script src="clike.js"></script>
+<link rel="stylesheet" href="codemirror/theme/duotone-light.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "Raleway", sans-serif
+    }
+
+    .w3-third img {
+        margin-bottom: -6px;
+        opacity: 0.8;
+        cursor: pointer
+    }
+
+    .w3-third img:hover {
+        opacity: 1
+    }
+</style>
+
+<!-- scripts -->
+<script>
+    MathJax = {
+        tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+    };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<!-- end scripts -->
+
+
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center"
+        style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+        <h3 class="w3-padding-64 w3-center"><b>Seminář<br>programování 1</b></h3>
+        <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button">Proměnné</a>
+        <a href="conditions.html" onclick="w3_close()" class="w3-bar-item w3-button">Podmínky</a>
+        <a href="loops.html" onclick="w3_close()" class="w3-bar-item w3-button">Cykly</a>
+        <a href="array.html" onclick="w3_close()" class="w3-bar-item w3-button">Pole</a>
+        <!-- <i class="fa fa-close"></i> -->
+        <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-padding-16 w3-button w3-display-topright"></i>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
+        <span class="w3-left w3-padding">Seminář programování 1</span>
+        <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+        title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:300px">
+
+        <!-- Push down content on small screens -->
+        <div class="w3-hide-large" style="margin-top:83px"></div>
+
+
+        <!-- Modal for full size images on click-->
+
+
+        <!-- About section -->
+
+
+        <!-- Contact section -->
+        <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
+            <div class="w3-content" style="max-width:1000px">
+                <h2><b>Funkce</b></h2>
+                <h3>Popis</h3>
+                <ul>
+                    <li>samostatná část programovu</li>
+                    <li>funkce umožnují psát program přehledněji a úsporněji</li>
+                    <li>lze ji libovolně volat odkudkoliv</li>
+                    <li>při každém volání se provedou příkazy uvnitř funkce</li>
+                    <li>funkce může mít své vstupy (parametry funkce) i výstup (návratová hodnota)</li>
+                </ul>
+                <h3>Vytvoření funkce </h3>
+                <ul>
+                  <li>funkce obecně</li>
+                </ul>
+
+                <textarea class="code">
+static typVysledku jmenoFunkce(typ1 jmeno1, ..., typN jmenoN)
+{
+    příkazy uvnitr těla funkce
+}</textarea>
+                <ul>
+                  <li>typVysledku = datový typ návratové hodnoty</li>
+                  <ul>
+                    <li>známé datové typy návratových hodnot: int, string, bool, int[], ...</li>
+                    <li>void: datový typ, který určuje, že funkce nebude nic vracet</li>
+                  </ul>
+                  <li>jmenoFunkce = platí stejná pravidla jako pro pojmenování proměnné</li>
+                  <li>typ1 jmeno1 = datový typ a identifikátor parametru</li>
+                  <li>parametry se uvnitř funkce chovají jako klasické proměnné</li>
+                  <li>pokud budeme chtít, aby funkce něco vracela, použijeme příkaz return (funkce se v tomto bodě ihned ukončí)</li>
+                </ul>
+                <h3>Příklady vytrváření funkcí</h3>
+                <h4>Funkce bez parametrů a návratové hodnoty</h4>
+                <textarea class="code">
+static void pozdrav()
+{
+  for(int i=0; i<3; i++)
+  {
+    Console.WriteLine("Ahoj");
+  }
+}</textarea>
+                <h4>Funkce s parametrem bez návratové hodnoty</h4>
+                <textarea class="code">
+static void pozdravJmenem(string jmeno)
+{
+  for (int i=0; i<3; i++)
+  {
+    Console.WriteLine("Ahoj {0}", jmeno);
+  }
+}</textarea>
+                <h4>Funkce s parametrem i návratovou hodnotou</h4>
+                <textarea class="code">
+static int soucet(int prvni, int druhe)
+{
+  int soucet = prvni + druhe;
+  return soucet;
+}</textarea>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- End page content -->
+
+</body>
+<script src="script.js"></script>
+<script src="graph.js"></script>
+
+</html>
