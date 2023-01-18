@@ -181,9 +181,31 @@ string jmeno = "David"; </textarea>
 
         </table>
         <h3>Operátory</h3>
+        <p>Operátory v jazyce C# jsou symboly nebo klíčová slova, která se používají k provedení matematických nebo
+          logických operací na hodnotách nebo proměnných. Například operátor "+" se používá k sčítání hodnot, operátor
+          "==" se používá k porovnání hodnot pro rovnost a operátor "!" se používá k negaci logické hodnoty. C# má
+          širokou škálu různých operátorů, jako jsou aritmetické, logické, relační, bitové a další, které se používají k
+          různým účelům v programování.</p>
+        <textarea class="code">
+int a = a + b; // binarní sčítání
+int d = a - b; // (binární odčítání)
+int a = -a; // (unární mínus)
+int pravda = a <= b; // (binární menší nebo rovno)
+a--; // (unární dekrementace)</textarea>
         <h3>Priorita operátorů</h3>
-        <h3>Aritmetické operátory</h3>
+        <p>Priorita určuje pořadí, ve kterém se operátory vyhodnocují. V jazyce C# je priorita stejná jako ji znáte z
+          matematiky. Vyhodnocování můžeme ovlivnit uzávorkováním.</p>
+        <textarea class="code">
+int a;
+a = 10 + 4 / 2 + 5; // 17
+a = (10 + 4) / 2 + 5; // 12
+a = (10 + 4) / (2 + 5); // 2</textarea>
         <h3>Zvláštní číselné hodnoty</h3>
+        <p>Reprezentované v desetinných datových typech.</p>
+        <textarea class="code">
+double plusNekonecno = 1.0/0,0; // kladné nekonečno
+double minusNekonecno = -1.0/0.0; // záporné nekonečno
+double nesmysl = 0.0/0.0; // NaN (Not a Number)</textarea>
         <h3>Výstup do konzole</h3>
         <p>Výpis do konzole a posunutí na nová řádek</p>
         <textarea class="code">
