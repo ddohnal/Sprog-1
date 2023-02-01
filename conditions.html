@@ -239,7 +239,7 @@ switch(text)
                     </div>
                 </div>
                 <div class="w3-panel w3-border-bottom">
-                    <h3>Úkol č.2</h3>
+                    <h3>Úkol č.4</h3>
                     <p>Napište v jazyce C# program, vypočítá kořeny kvadratické rovnice ze zadaných koeficientů a, b, c.
                     </p>
                     <div class="w3-panel w3-white">
@@ -256,6 +256,77 @@ switch(text)
                         <h4><b>Výstup:</b></h4>
                         <p>Kvadratická rovnice nemá řešení v oboru reálných čísel.</p>
                     </div>
+                </div>
+                <div class="w3-panel w3-border-bottom">
+                    <h3>Úkol č.5</h3>
+                    <p>Napište v jazyce C# program, který od uživatele určitý znak a poté slovy vypíše, o jaký znak se
+                        jedná. Váš program by měl odpovídat na všechna málá, velká písemna, číslici a specialní
+                        znaky (!?@#).</p>
+                    <div class="w3-panel w3-white">
+                        <h4><b>Vstup:</b></h4>
+                        <p>Zadejte znak: a</p>
+                        <h4><b>Výstup:</b></h4>
+                        <p>Zadali jste malé písmeno a.</p>
+                    </div>
+                    <div class="w3-panel w3-white">
+                        <h4><b>Vstup:</b></h4>
+                        <p>Zadejte znak: B</p>
+                        <h4><b>Výstup:</b></h4>
+                        <p>Zadali jste velké písmeno B.</p>
+                    </div>
+                    <div class="w3-panel w3-white">
+                        <h4><b>Vstup:</b></h4>
+                        <p>Zadejte znak: 7</p>
+                        <h4><b>Výstup:</b></h4>
+                        <p>Zadali jste číslici 7.</p>
+                    </div>
+                    <div class="w3-panel w3-white">
+                        <h4><b>Vstup:</b></h4>
+                        <p>Zadejte znak: !</p>
+                        <h4><b>Výstup:</b></h4>
+                        <p>Zadali jste vykřičník.</p>
+                    </div>
+                </div>
+                <div class="w3-panel w3-border-bottom">
+                    <h3>Úkol č.5</h3>
+                    <p>Zjistěte, zda-li je zadané datum ve správném formátu (každý měsic má určitý počet dní, měsíců je
+                        12, přestupné roky). Pravidlo pro přestupný rok: rok je přestupný, pokud je dělitelný 4 a není
+                        dělitelný 100, nebo je-li dělitelný 400.</p>
+                    <h4>Příkazy pro parsování datumu ze stringu</h4>
+                    <p>Tento kód si do svého programu zkopírujte:</p>
+                    <textarea class="code">
+string rawDate = Console.ReadLine();
+string[] date = rawDate.Split(".");
+
+int day = int.Parse(date[0]);
+int month = int.Parse(date[1]);
+int year = int.Parse(date[2]);
+</textarea>
+                    <div class="w3-panel w3-white">
+                        <h4><b>Vstup:</b></h4>
+                        <p>Zadejte datum: 24. 10. 1992</p>
+                        <h4><b>Výstup:</b></h4>
+                        <p>Datum je ve správném formátu.</p>
+                    </div>
+                    <div class="w3-panel w3-white">
+                        <h4><b>Vstup:</b></h4>
+                        <p>Zadejte datum: 54.10.1992</p>
+                        <h4><b>Výstup:</b></h4>
+                        <p>Datum ve špatném formátu. Tento den neexistuje.</p>
+                    </div>
+                    <div class="w3-panel w3-white">
+                        <h4><b>Vstup:</b></h4>
+                        <p>Zadejte datum: 24.13.1900</p>
+                        <h4><b>Výstup:</b></h4>
+                        <p>Datum ve špatném formátu. Tento den neexistuje.</p>
+                    </div>
+                    <div class="w3-panel w3-white">
+                        <h4><b>Vstup:</b></h4>
+                        <p>Zadejte datum: 29.2.1900</p>
+                        <h4><b>Výstup:</b></h4>
+                        <p>Datum ve špatném formátu. Tento den neexistuje.</p>
+                    </div>
+
                 </div>
             </div>
         </div>
